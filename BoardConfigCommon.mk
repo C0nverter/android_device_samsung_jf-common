@@ -130,6 +130,11 @@ TARGET_USE_SDCLANG := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
+# TWRP Support (optional)
+ifeq ($(WITH_TWRP),true)
+-include device/samsung/jf-common/twrp.mk
+endif
+
 # Wifi module
 BOARD_WLAN_DEVICE := bcmdhd
 BOARD_HAVE_SAMSUNG_WIFI := true
